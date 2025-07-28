@@ -24,8 +24,8 @@ mainLoop() {
 ```
 
 Console commands:
-- startSpeedrun(roomName,shardName)
-- clearOldRuns(tickHistoryToKeep = -1)
+- strongholdSpeedrunSuite.startSpeedrun(roomName,shardName)
+- strongholdSpeedrunSuite.clearOldRuns(tickHistoryToKeep = -1)
 
 Both of these commands can obviously be implemented in automation to track runs and clean history past a certain point, allowing background run tracking on world.  It should be noted that calling startSpeedrun on an existing run will simply create a new entry with reset cost tracking and stop tracking the old run. (it will still be in memory, just no longer tracked)
 
