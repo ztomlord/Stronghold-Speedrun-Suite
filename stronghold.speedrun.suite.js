@@ -1,6 +1,6 @@
 'use strict';
 
-const version = '1.00';
+const version = '1.01';
 const swcEnEquivalent = {H:20,O:20,X:50,U:30,L:30,K:30,Z:30};
 
 //valid args:
@@ -163,9 +163,10 @@ const updateRun = function(room, run_mem)
                 run_mem.costs.bodyparts += (mult * creep.body.length);
                 
                 let boostCosts = getCreepCost_Boosts(creep);
-                run_mem.costs.rawMinerals += (mult * boostCosts.totalRawMinerals);
+                 //each boosted body part requires 30 mat to boost
+                run_mem.costs.rawMinerals += (mult * boostCosts.totalRawMinerals) * 30;
                 run_mem.costs.labTime += (mult * boostCosts.totalLabTime);
-                run_mem.costs.energyEquivalent += (mult * boostCosts.totalEnEquiv);
+                run_mem.costs.energyEquivalent += (mult * boostCosts.totalEnEquiv) * 30;
                 
                 if(boostCosts.totalRawMinerals > 0)
                 {
